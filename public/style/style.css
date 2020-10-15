@@ -34,8 +34,8 @@ nav a:hover {
 
 .fond {
   position: fixed;
-  background-image: url("../mediat/img/texture.jpg");
   background-color: rgba(98,97,97,1);
+  background-image: url("../img/texture.jpg");
   width: 100%;
   height: 100%;
   z-index: -1;
