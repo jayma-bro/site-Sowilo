@@ -1,5 +1,6 @@
 <?php
 $titre = "mon site";
+$sidebar = true;
 ob_start(); ?>
   <h1>
     l'équipe de Sowilo

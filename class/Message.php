@@ -21,22 +21,9 @@ class Message
       $this->date = new DateTime($date);
     }
   }
-  public static function fromJSON(string $json): Message
-  {
-    $data = json_decode($json, true);
-    return new self($data['username'],$data['message'],new DateTime("@" . $data['date']));
-  }
-  public function isValid():bool
+  public function isValid(): bool
   {
     return strlen($this->username) >= 3 && strlen($this->message) >= 10;
-  }
-  public function toJSON(): string
-  {
-    return json_encode([
-      'username' => $this->username,
-      'message' => $this->message,
-      'date' => $this->date->getTimestamp()
-    ]);
   }
   public function toHTML(): string
   {

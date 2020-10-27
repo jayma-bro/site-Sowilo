@@ -1,11 +1,10 @@
 <?php
-require_once '../vendor/autoload.php';
 use App\{
   GuestBook,
   Message
 };
 $titre = "Livre d'or - Sowilo";
-
+$sidebar = true;
 $errors = null;
 $susses = false;
 $guestbook = new GuestBook();

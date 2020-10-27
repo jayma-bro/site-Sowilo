@@ -21,22 +21,22 @@
         <a href="<?= $router->generate('contact') ?>">Contact</a>
         <a href="<?= $router->generate('livre_dor') ?>">Livre d'or</a>
       </nav>
+      <div class="login">
+        <?php if ($_SESSION['id']): ?>
+          <a href="<?= $router->generate('home') ?>">deconnection</a>
+        <?php else: ?>
+          <a href="<?= $router->generate('signin') ?>">inscription</a><br>
+          <a href="<?= $router->generate('login') ?>">connection</a>
+        <?php endif ?>
+      </div>
     </header>
     <div class="content">
       <main class="main">
         <?= $main ?>
       </main>
-      <nav class="sidebar">
-        <div class="social">
-          <h2>section dédié au social</h2>
-        </div>
-        <div class="info-utile">
-          <h2>section dédié au info utiles</h2>
-        </div>
-        <div class="calendrier">
-          <h2>section du calendrier des evenements</h2>
-        </div>
-      </nav>
+      <?php if ($sidebar) {
+        require 'sidebar.php';
+      } ?>
     </div>
   </body>
 </html>
